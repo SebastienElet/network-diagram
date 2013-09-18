@@ -4,7 +4,7 @@
   , "description": "Network mapping based on mtr/graphviz"
   , "main": "netmap.coffee"
   , "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "mocha --require should --compilers coffee:coffee-script --colors"
     }
   , "author": "Sébastien ELET"
   , "license": "BSD"
@@ -15,6 +15,7 @@
     , "commander": "~2.0.0"
     , "request": "~2.27.0"
     , "jade": "~0.35.0"
+    , "coffee-script": "1.6.x"
     },
     "devDependencies": {
       "mocha": "*"
