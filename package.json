@@ -15,5 +15,11 @@
     "commander": "~2.0.0",
     "request": "~2.27.0",
     "jade": "~0.35.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+    , "should": "*"
+    , "supertest": "*"
+    , "supervisor": "*"
   }
 }
