@@ -11,6 +11,7 @@ graph = graphviz.digraph('G')
 
 app.get '/', (req, res) ->
   res.render('index.jade')
+
 app.post '/trace', (req, res) ->
 
   lastHop = null
@@ -22,10 +23,17 @@ app.post '/trace', (req, res) ->
     if hop.ip is null then continue
     if hop.ip is undefined then continue
     node = graph.addNode(hop.ip)
+    node.set("fillcolor", "#eeeeee")
+    node.set("style", "filled, rounded")
+    node.set("shape", "box")
+    node.set("fontcolor", "#314B5F")
 
     if lastHop
       console.log "Add edge"
-      graph.addEdge(lastHop, hop.ip)
+      edge = graph.addEdge(lastHop, hop.ip)
+      edge.set("fontcolor", "#767676")
+      edge.set("fontsize", "10")
+      edge.set("color", "#1A2833")
 
     lastHop = node
      
